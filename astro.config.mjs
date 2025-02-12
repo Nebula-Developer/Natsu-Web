@@ -6,6 +6,8 @@ import preact from '@astrojs/preact';
 import icon from 'astro-icon';
 import node from '@astrojs/node';
 
+import vercel from '@astrojs/vercel';
+
 /** @type {any} */
 let tailwind = tailwindcss();
 
@@ -18,9 +20,7 @@ export default defineConfig({
 
   integrations: [icon(), preact()],
 
-  adapter: node({
-    mode: 'standalone'
-  }),
+  adapter: vercel(),
 
   server: {
     host: '0.0.0.0',
